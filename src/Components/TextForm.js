@@ -34,10 +34,6 @@ export default function TextForm(props) {
 
   return (
     <div>
-      {/* <div className="row justify-content-end">
-        <h1 className="d-inline">{props.heading}</h1>
-        <div className="">Word Count:{count}</div>
-      </div> */}
       <div className="row justify-content-between">
         <div className="col-4">
           <h2>{props.heading}</h2>
