@@ -40,10 +40,13 @@ export default function TextForm(props) {
       </div> */}
       <div className="row justify-content-between">
         <div className="col-4">
-        <h2>{props.heading}</h2>
+          <h2>{props.heading}</h2>
         </div>
         <div className="col-2 d-flex align-items-end">
-        <div>Word Count:{count}</div>
+          <div>
+            <div>Word Count: {count}</div>
+            <div>Character count: {text.length}</div>
+          </div>
         </div>
       </div>
       <div className="mb-3">
@@ -67,10 +70,19 @@ export default function TextForm(props) {
         </button>
         <button
           type="button"
-          className="btn btn-secondary mx-3"
+          className="btn btn-success mx-3"
           onClick={onClickHandleLowerCase}
         >
           lowercase
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary mx-3"
+          onClick={() =>
+            navigator.clipboard.writeText(text2)
+          }
+        >
+          Copy text below
         </button>
       </div>
 
