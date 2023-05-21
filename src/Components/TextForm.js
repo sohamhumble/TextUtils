@@ -4,6 +4,8 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
   const [count, setCount] = useState(0);
+  let textareaBackgroundColor = props.mode === "light" ? "white" : "#b2b4b5";
+  let textareaColor = props.mode === "light" ? "black" : "white";
 
   const onChangeHandle = (eventObject) => {
     setText(eventObject.target.value);
@@ -32,6 +34,13 @@ export default function TextForm(props) {
     setText2(newText);
   };
 
+  const onClickHandleExtraSpaces=()=>{
+    let newText=text.replace(/\s+/g, ' ').trim()
+    let newText2=text2.replace(/\s+/g, ' ').trim()
+    setText(newText)
+    setText2(newText2)
+  }
+
   return (
     <div>
       <div className="row justify-content-between">
@@ -51,6 +60,11 @@ export default function TextForm(props) {
           className="form-control"
           id="myBox"
           rows="8"
+          style={{
+            backgroundColor: `${textareaBackgroundColor}`,
+            color: `${textareaColor}`,
+            height: "100px",
+          }}
           value={text}
           onChange={onChangeHandle}
         ></textarea>
@@ -73,10 +87,15 @@ export default function TextForm(props) {
         </button>
         <button
           type="button"
+          className="btn btn-warning mx-3"
+          onClick={onClickHandleExtraSpaces}
+        >
+          Remove Extra Spaces
+        </button>
+        <button
+          type="button"
           className="btn btn-secondary mx-3"
-          onClick={() =>
-            navigator.clipboard.writeText(text2)
-          }
+          onClick={() => navigator.clipboard.writeText(text2)}
         >
           Copy text below
         </button>
@@ -88,6 +107,11 @@ export default function TextForm(props) {
           id="myBox"
           rows="8"
           value={text2}
+          style={{
+            backgroundColor: `${textareaBackgroundColor}`,
+            color: `${textareaColor}`,
+            height: "100px",
+          }}
           readOnly
         ></textarea>
       </div>
