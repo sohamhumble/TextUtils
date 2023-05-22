@@ -27,11 +27,13 @@ export default function TextForm(props) {
   const onClickHandleLowerCase = () => {
     let newText = text.toLowerCase();
     setText2(newText);
+    props.showAlert("success","Converted to lowercase")
   };
 
   const onClickHandleUpperCase = () => {
     let newText = text.toUpperCase();
     setText2(newText);
+    props.showAlert("success","Converted to UPPERCASE")
   };
 
   const onClickHandleExtraSpaces=()=>{
@@ -39,6 +41,12 @@ export default function TextForm(props) {
     let newText2=text2.replace(/\s+/g, ' ').trim()
     setText(newText)
     setText2(newText2)
+    props.showAlert("success","Cleared Extra Space")
+  }
+
+  const onClickHandleCopy=()=>{
+    navigator.clipboard.writeText(text2)
+    props.showAlert("success","Copied The Text to Clipboard")
   }
 
   return (
@@ -95,7 +103,7 @@ export default function TextForm(props) {
         <button
           type="button"
           className="btn btn-secondary mx-3"
-          onClick={() => navigator.clipboard.writeText(text2)}
+          onClick={onClickHandleCopy}
         >
           Copy text below
         </button>
