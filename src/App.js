@@ -22,9 +22,11 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       showAlert("dark", "Dark Mode Enabled");
+      document.title = "Text Util - Dark Mode"
     } else {
       setMode("light");
       showAlert("light", "Light Mode Enabled");
+      document.title = "Text Util - Light Mode"
     }
     setButtonColor("primary")
   };
