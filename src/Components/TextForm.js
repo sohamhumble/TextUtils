@@ -81,28 +81,28 @@ export default function TextForm(props) {
       <div className="mb-3">
         <button
           type="button"
-          className="btn btn-primary mx-3"
+          className={`btn btn-${props.buttonColor} mx-3`}
           onClick={onClickHandleUpperCase}
         >
           UPPERCASE
         </button>
         <button
           type="button"
-          className="btn btn-success mx-3"
+          className={`btn btn-${props.buttonColor} mx-3`}
           onClick={onClickHandleLowerCase}
         >
           lowercase
         </button>
         <button
           type="button"
-          className="btn btn-warning mx-3"
+          className={`btn btn-${props.buttonColor} mx-3`}
           onClick={onClickHandleExtraSpaces}
         >
           Remove Extra Spaces
         </button>
         <button
           type="button"
-          className="btn btn-secondary mx-3"
+          className={`btn btn-${props.buttonColor} mx-3`}
           onClick={onClickHandleCopy}
         >
           Copy text below

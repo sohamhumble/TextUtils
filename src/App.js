@@ -11,6 +11,7 @@ function App() {
     type: null,
     message: null,
   });
+  const [buttonColor,setButtonColor] = useState("primary")
 
   document.body.style.backgroundColor = `${
     mode === "dark" ? "#2e3d4d" : "white"
@@ -25,6 +26,7 @@ function App() {
       setMode("light");
       showAlert("light", "Light Mode Enabled");
     }
+    setButtonColor("primary")
   };
 
   var myTimeout=null
@@ -41,14 +43,26 @@ function App() {
     }, 2000);
   };
 
+  const changegreen = ()=>{
+    document.body.style.backgroundColor = '#13521f'
+    setButtonColor("success")
+  }
+  const changeblue = ()=>{
+    document.body.style.backgroundColor = "#2e3d4d"
+    setButtonColor("primary")
+  }
+  const changered = ()=>{
+    document.body.style.backgroundColor = '#621919'
+    setButtonColor("danger")
+  }
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} changegreen={changegreen} changered={changered} changeblue={changeblue}/>
       <div className="container-fluid z-2 position-absolute">
         <Alert alert={alert} />
       </div>
       <div className="container my-3">
-        <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} />
+        <TextForm heading="Enter your Text" mode={mode} showAlert={showAlert} buttonColor={buttonColor} />
         {/* <About/> */}
       </div>
     </>
