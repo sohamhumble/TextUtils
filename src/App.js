@@ -37,14 +37,12 @@ function App() {
     setButtonColor("primary");
   };
 
-  var myTimeout = null;
   const showAlert = (type, message) => {
     setAlert({
       type: type,
       message: message,
     });
-    clearTimeout(myTimeout);
-    myTimeout = setTimeout(() => {
+    setTimeout(() => {
       setAlert({
         type: null,
       });
