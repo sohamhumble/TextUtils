@@ -18,9 +18,10 @@ function App() {
     message: null,
   });
   const [buttonColor, setButtonColor] = useState("primary");
+  const [darkModeType,setDarkModeType] = useState("#2e3d4d");
 
   document.body.style.backgroundColor = `${
-    mode === "dark" ? "#2e3d4d" : "white"
+    mode === "dark" ? darkModeType : "white"
   }`;
   document.body.style.color = `${mode === "dark" ? "white" : "black"}`;
 
@@ -51,14 +52,17 @@ function App() {
 
   const changegreen = () => {
     document.body.style.backgroundColor = "#13521f";
+    setDarkModeType("#13521f")
     setButtonColor("success");
   };
   const changeblue = () => {
     document.body.style.backgroundColor = "#2e3d4d";
+    setDarkModeType("#2e3d4d")
     setButtonColor("primary");
   };
   const changered = () => {
     document.body.style.backgroundColor = "#621919";
+    setDarkModeType("#621919")
     setButtonColor("danger");
   };
   return (
