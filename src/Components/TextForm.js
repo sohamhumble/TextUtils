@@ -10,14 +10,18 @@ export default function TextForm(props) {
   const onChangeHandle = (eventObject) => {
     setText(eventObject.target.value);
     let newText = eventObject.target.value;
+    // Added space at the beginning to calculate first word
     newText = " " + newText;
     let countLocal = 0;
     let check = true;
+    // LOGIC:
+    // whenever a space or \n in encountered, check=true
+    // if check=true count++ and check=false till ' ' or '\n' is encountered
     for (let i = 0; i < newText.length; i++) {
       if (newText[i] !== " " && check) {
         countLocal++;
         check = false;
-      } else if (newText[i] === " ") {
+      } else if (newText[i] === " " || newText[i] === '\n') {
         check = true;
       }
     }
