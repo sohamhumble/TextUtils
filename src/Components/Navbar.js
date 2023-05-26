@@ -17,19 +17,19 @@ export default function Navbar(props) {
         </button>
         <ul className="dropdown-menu">
           <li>
-            <Link className="dropdown-item" onClick={props.changegreen} to="">
+            <button className="dropdown-item" onClick={props.changegreen}>
               Green
-            </Link>
+            </button>
           </li>
           <li>
-            <Link className="dropdown-item" onClick={props.changered} to="">
+            <button className="dropdown-item" onClick={props.changered}>
               Red
-            </Link>
+            </button>
           </li>
           <li>
-            <Link className="dropdown-item" onClick={props.changeblue} to="">
+            <button className="dropdown-item" onClick={props.changeblue} >
               Blue
-            </Link>
+            </button>
           </li>
         </ul>
       </div>

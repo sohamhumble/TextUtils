@@ -49,6 +49,12 @@ export default function TextForm(props) {
     props.showAlert("success","Copied The Text to Clipboard")
   }
 
+  const onClickHandleClearText = ()=>{
+    setText("")
+    setText2("")
+    props.showAlert("success","Text Area Cleared")
+  }
+
   return (
     <div>
       <div className="row justify-content-between">
@@ -81,31 +87,43 @@ export default function TextForm(props) {
       <div className="mb-3">
         <button
           type="button"
-          className={`btn btn-${props.buttonColor} mx-3`}
+          className={`btn btn-${props.buttonColor} mx-3 my-3`}
           onClick={onClickHandleUpperCase}
+          disabled={text.length === 0}
         >
           UPPERCASE
         </button>
         <button
           type="button"
-          className={`btn btn-${props.buttonColor} mx-3`}
+          className={`btn btn-${props.buttonColor} mx-3 my-3`}
           onClick={onClickHandleLowerCase}
+          disabled={text.length === 0}
         >
           lowercase
         </button>
         <button
           type="button"
-          className={`btn btn-${props.buttonColor} mx-3`}
+          className={`btn btn-${props.buttonColor} mx-3 my-3`}
           onClick={onClickHandleExtraSpaces}
+          disabled={text.length === 0}
         >
           Remove Extra Spaces
         </button>
         <button
           type="button"
-          className={`btn btn-${props.buttonColor} mx-3`}
+          className={`btn btn-${props.buttonColor} mx-3 my-3`}
           onClick={onClickHandleCopy}
+          disabled={text.length === 0}
         >
           Copy text below
+        </button>
+        <button
+          type="button"
+          className={`btn btn-${props.buttonColor} mx-3 my-3`}
+          onClick={onClickHandleClearText}
+          disabled={text.length === 0}
+        >
+          Clear Text
         </button>
       </div>
 

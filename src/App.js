@@ -51,17 +51,17 @@ function App() {
   };
 
   const changegreen = () => {
-    document.body.style.backgroundColor = "#13521f";
+    // document.body.style.backgroundColor = "#13521f";
     setDarkModeType("#13521f")
     setButtonColor("success");
   };
   const changeblue = () => {
-    document.body.style.backgroundColor = "#2e3d4d";
+    // document.body.style.backgroundColor = "#2e3d4d";
     setDarkModeType("#2e3d4d")
     setButtonColor("primary");
   };
   const changered = () => {
-    document.body.style.backgroundColor = "#621919";
+    // document.body.style.backgroundColor = "#621919";
     setDarkModeType("#621919")
     setButtonColor("danger");
   };
@@ -86,7 +86,7 @@ function App() {
             path="/about"
             element={
               <div className="container my-3">
-                <About />
+                <About mode={mode} darkModeType={darkModeType}/>
               </div>
             }
           />
