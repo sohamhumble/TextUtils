@@ -57,16 +57,18 @@ export default function TextForm(props) {
 
   return (
     <div>
+      <div className="cont">
       <div className="row justify-content-between">
         <div className="col-4">
           <h2>{props.heading}</h2>
         </div>
-        <div className="col-2 d-flex align-items-end">
+        <div className="col-3 d-flex align-items-end">
           <div>
             <div>Word Count: {count}</div>
             <div>Character count: {text.length}</div>
           </div>
         </div>
+      </div>
       </div>
       <div className="mb-3">
         <textarea
